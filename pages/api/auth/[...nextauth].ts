@@ -14,7 +14,5 @@ export const authOptions = {
             clientSecret: process.env.GITHUB_SECRET,
         }),
     ],
-    adapter: PrismaAdapter(prisma),
-    secret: process.env.SECRET,
-    
+    adapter: PrismaAdapter(prisma)    
 };

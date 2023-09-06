@@ -12,8 +12,10 @@ const Header: React.FC = () => {
 
   let left = (
     <div className="left">
-      <Link className="bold" href={"/"}>
-        Feed
+      <Link legacyBehavior href="/">
+        <a className="bold" data-active={isActive('/')}>
+          Feed
+        </a>
       </Link>
       <style jsx>{`
         .bold {
@@ -42,8 +44,10 @@ const Header: React.FC = () => {
   if (status === 'loading') {
     left = (
       <div className="left">
-        <Link className="bold" href={"/"}>
-          Feed
+        <Link legacyBehavior href="/">
+          <a className="bold" data-active={isActive('/')}>
+            Feed
+          </a>
         </Link>
         <style jsx>{`
           .bold {
@@ -81,8 +85,8 @@ const Header: React.FC = () => {
   if (!session) {
     right = (
       <div className="right">
-        <Link className="bold" href={"/api/auth/signin"} onClick={() => isActive('/signup')}>
-          Log in
+        <Link legacyBehavior href="/api/auth/signin">
+          <a data-active={isActive('/signup')}>Log in</a>
         </Link>
         <style jsx>{`
           a {
@@ -112,11 +116,13 @@ const Header: React.FC = () => {
   if (session) {
     left = (
       <div className="left">
-        <Link className="bold" href={"/"} onClick={() => isActive('/')}>
-          Feed
+        <Link legacyBehavior href="/">
+          <a className="bold" data-active={isActive('/')}>
+            Feed
+          </a>
         </Link>
-        <Link className="bold" href={"/drafts"} onClick={() => isActive('/drafts')}>
-          My drafts
+        <Link legacyBehavior href="/drafts">
+          <a data-active={isActive('/drafts')}>My drafts</a>
         </Link>
         <style jsx>{`
           .bold {

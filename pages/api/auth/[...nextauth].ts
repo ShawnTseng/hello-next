@@ -16,5 +16,4 @@ export const authOptions = {
     ],
     adapter: PrismaAdapter(prisma),
     secret: process.env.SECRET,
-    
 };

@@ -65,7 +65,6 @@ const Post: React.FC<PostProps> = (props) => {
             <button onClick={() => deletePost(props.id)}>Delete</button>
           )
         }
-
       </div>
       <style jsx>{`
         .page {

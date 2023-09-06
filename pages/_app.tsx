@@ -3,7 +3,7 @@ import { AppProps } from "next/app";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <SessionProvider session={pageProps.session} basePath="/api/auth">
+    <SessionProvider session={pageProps.session} basePath="http://hello-next-shawntseng.vercel.app/api/auth">
       <Component {...pageProps} />
     </SessionProvider>
   );

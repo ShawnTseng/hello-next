@@ -11,6 +11,7 @@ npx prisma generate
 - 移除登入設定
 - 設計另一種方式新增文章
 - 確認功能列表
+- 學習 AWS Amplify，暫時使用 Vercel
 
 ## 功能列表
 - [] 顯示所有文章

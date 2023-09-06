@@ -12,10 +12,8 @@ const Header: React.FC = () => {
 
   let left = (
     <div className="left">
-      <Link href="/">
-        <a className="bold" data-active={isActive("/")}>
-          Feed
-        </a>
+      <Link className="bold" href={"/"}>
+        Feed
       </Link>
       <style jsx>{`
         .bold {
@@ -44,10 +42,8 @@ const Header: React.FC = () => {
   if (status === 'loading') {
     left = (
       <div className="left">
-        <Link href="/">
-          <a className="bold" data-active={isActive('/')}>
-            Feed
-          </a>
+        <Link className="bold" href={"/"}>
+          Feed
         </Link>
         <style jsx>{`
           .bold {
@@ -85,8 +81,8 @@ const Header: React.FC = () => {
   if (!session) {
     right = (
       <div className="right">
-        <Link href="/api/auth/signin">
-          <a data-active={isActive('/signup')}>Log in</a>
+        <Link className="bold" href={"/api/auth/signin"} onClick={() => isActive('/signup')}>
+          Log in
         </Link>
         <style jsx>{`
           a {
@@ -116,13 +112,11 @@ const Header: React.FC = () => {
   if (session) {
     left = (
       <div className="left">
-        <Link href="/">
-          <a className="bold" data-active={isActive('/')}>
-            Feed
-          </a>
+        <Link className="bold" href={"/"} onClick={() => isActive('/')}>
+          Feed
         </Link>
-        <Link href="/drafts">
-          <a data-active={isActive('/drafts')}>My drafts</a>
+        <Link className="bold" href={"/drafts"} onClick={() => isActive('/drafts')}>
+          My drafts
         </Link>
         <style jsx>{`
           .bold {
@@ -150,10 +144,8 @@ const Header: React.FC = () => {
         <p>
           {session.user.name} ({session.user.email})
         </p>
-        <Link href="/create">
-          <button>
-            <a>New post</a>
-          </button>
+        <Link className="bold" href={"/create"}>
+          New post
         </Link>
         <button onClick={() => signOut()}>
           <a>Log out</a>

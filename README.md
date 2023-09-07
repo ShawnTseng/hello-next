@@ -1,9 +1,19 @@
 # 初始化
 
-## Git clone 完後同步資料庫及密碼(步驟待確認)
-npx vercel link
-npx vercel pull .env
-npx prisma generate
+## Git clone 完後需連結vercel、取得環境變數、並加入github及nextauth url的設定
+1. npm install
+2. npx vercel link
+3. npx vercel env pull .env
+4. add these config to .env
+`
+# GitHub OAuth
+GITHUB_ID=xxx
+GITHUB_SECRET=xxx
+NEXTAUTH_URL=http://localhost:3000/api/auth
+`
+
+5. npm run dev
+<!-- npx prisma generate -->
 
 ## 待辦
 - 變更專案名稱
